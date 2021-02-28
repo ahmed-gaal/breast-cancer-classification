@@ -1,0 +1,4 @@
+[core]
+    analytics = false
+['remote "breast-cancer"']
+    url = gdrive:///1fAckypT-1smY7CN5fDsKHCp-2lvWOIto

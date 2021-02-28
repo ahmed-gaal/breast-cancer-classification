@@ -1,0 +1,59 @@
+data extraction:
+  cmd: python src/extract_data.py
+  deps:
+  - path: src/extract_data.py
+    md5: aeef7b729139c5687d7d0f9f0af8dc3a
+    size: 936
+  outs:
+  - path: brst_assets/brst_data
+    md5: 9abb1161fda5eed47adbc37960a818a2.dir
+    size: 126043
+    nfiles: 2
+feature engineering:
+  cmd: python src/extract_features.py
+  deps:
+  - path: brst_assets/brst_data
+    md5: 9abb1161fda5eed47adbc37960a818a2.dir
+    size: 126043
+    nfiles: 2
+  - path: src/extract_features.py
+    md5: 2ac51f262a7a356fce68f489da319eec
+    size: 1282
+  outs:
+  - path: brst_assets/brst_features
+    md5: ce9bf4cb03beeec4305f19a517b97e4c.dir
+    size: 126043
+    nfiles: 4
+model training:
+  cmd: python src/train_model.py
+  deps:
+  - path: brst_assets/brst_features
+    md5: ce9bf4cb03beeec4305f19a517b97e4c.dir
+    size: 126043
+    nfiles: 4
+  - path: src/train_model.py
+    md5: 98f560220bc01d1ad419b0da91aeb2b8
+    size: 729
+  outs:
+  - path: brst_assets/brst_models
+    md5: 43e9b3296626cec07444bc4b86020880.dir
+    size: 2981453
+    nfiles: 1
+model evaluation:
+  cmd: python src/evaluate_model.py
+  deps:
+  - path: brst_assets/brst_features
+    md5: ce9bf4cb03beeec4305f19a517b97e4c.dir
+    size: 126043
+    nfiles: 4
+  - path: brst_assets/brst_models
+    md5: 43e9b3296626cec07444bc4b86020880.dir
+    size: 2981453
+    nfiles: 1
+  - path: src/evaluate_model.py
+    md5: 8ec40c60543e0e33bca339209306c5ea
+    size: 1711
+  outs:
+  - path: brst_assets/brst_metrics/metrics.json
+    md5: ced57c29ad4ea0e8d62f89ca3775fede
+    size: 157

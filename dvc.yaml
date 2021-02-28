@@ -1,0 +1,30 @@
+stages:
+  data extraction:
+    cmd: python src/extract_data.py
+    deps:
+    - src/extract_data.py
+    outs:
+    - brst_assets/brst_data
+  feature engineering:
+    cmd: python src/extract_features.py
+    deps:
+    - brst_assets/brst_data
+    - src/extract_features.py
+    outs:
+    - brst_assets/brst_features
+  model training:
+    cmd: python src/train_model.py
+    deps:
+    - brst_assets/brst_features
+    - src/train_model.py
+    outs:
+    - brst_assets/brst_models
+  model evaluation:
+    cmd: python src/evaluate_model.py
+    deps:
+    - brst_assets/brst_features
+    - brst_assets/brst_models
+    - src/evaluate_model.py
+    metrics:
+    - brst_assets/brst_metrics/metrics.json:
+        cache: false
