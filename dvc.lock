@@ -32,12 +32,12 @@ model training:
     size: 126043
     nfiles: 4
   - path: src/train_model.py
-    md5: 98f560220bc01d1ad419b0da91aeb2b8
-    size: 729
+    md5: 516905ccd8251b0f79d9c28d11d7a652
+    size: 721
   outs:
   - path: brst_assets/brst_models
-    md5: 43e9b3296626cec07444bc4b86020880.dir
-    size: 2981453
+    md5: d6d61da06df41b7bb7842ded63d0807e.dir
+    size: 535286
     nfiles: 1
 model evaluation:
   cmd: python src/evaluate_model.py
@@ -47,13 +47,13 @@ model evaluation:
     size: 126043
     nfiles: 4
   - path: brst_assets/brst_models
-    md5: 43e9b3296626cec07444bc4b86020880.dir
-    size: 2981453
+    md5: d6d61da06df41b7bb7842ded63d0807e.dir
+    size: 535286
     nfiles: 1
   - path: src/evaluate_model.py
     md5: 8ec40c60543e0e33bca339209306c5ea
     size: 1711
   outs:
   - path: brst_assets/brst_metrics/metrics.json
-    md5: ced57c29ad4ea0e8d62f89ca3775fede
+    md5: 903cdf1245f05588e860bfad86871305
     size: 157
