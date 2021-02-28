@@ -13,7 +13,7 @@ X_train = pd.read_csv(str(Params.features / 'train_features.csv'))
 y_train = pd.read_csv(str(Params.features / 'train_target.csv'))
 
 # Instantiating and fitting the algorithm.
-model = AdaBoostClassifier(n_estimators=1000)
+model = AdaBoostClassifier(n_estimators=500)
 model.fit(X_train, y_train.to_numpy().ravel())
 
 # Saving model in serialized format.
