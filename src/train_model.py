@@ -2,7 +2,7 @@
 import pickle
 import pandas as pd
 import numpy as np
-from sklearn.ensemble import AdaBoostClassifier
+from sklearn.ensemble import BaggingClassifier, RandomForestClassifier
 from param import Params
 
 # Create a directory to save models developed.
@@ -13,7 +13,9 @@ X_train = pd.read_csv(str(Params.features / 'train_features.csv'))
 y_train = pd.read_csv(str(Params.features / 'train_target.csv'))
 
 # Instantiating and fitting the algorithm.
-model = AdaBoostClassifier(n_estimators=500)
+model = BaggingClassifier(RandomForestClassifier(n_estimators=100), 
+    n_estimators=100, oob_score=True, bootstrap=True
+)
 model.fit(X_train, y_train.to_numpy().ravel())
 
 # Saving model in serialized format.
