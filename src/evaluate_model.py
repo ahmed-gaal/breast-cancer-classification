@@ -51,6 +51,5 @@ with open(str(Params.metrics / 'metrics.json'), 'w') as outfile:
          dict(accuracy_score=acc, average_accuracy=ave)), outfile
     )
 conf.to_csv(
-    str(Params.metrics / 'confusion_matrix.csv'),
-    index=None
+    str(Params.metrics / 'confusion_matrix.csv')
 )

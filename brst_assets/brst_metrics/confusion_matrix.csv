@@ -1,4 +1,4 @@
-Predicted,Predicted
-Negative,Positive
-43,4
-4,63
+,,Predicted,Predicted
+,,Negative,Positive
+Actual,Negative,43,4
+Actual,Positive,4,63
