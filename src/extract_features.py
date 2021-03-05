@@ -13,6 +13,7 @@ test_df = pd.read_csv(str(Params.data / 'test.csv'))
 
 
 def feature_extraction(dframe):
+    """Function to extract features."""
     deff = dframe.loc[:, dframe.columns != 'diagnosis']
     return deff
 
@@ -24,6 +25,7 @@ test_features = feature_extraction(test_df)
 
 
 def preprocess_target(dframe):
+    """Function to preprocess target feature."""
     specs = {
         'M': 0, 'B': 1
     }
