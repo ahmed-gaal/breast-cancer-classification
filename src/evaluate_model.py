@@ -47,8 +47,8 @@ ave = np.mean(res)
 # Store results in the metrics directory
 with open(str(Params.metrics / 'metrics.json'), 'w') as outfile:
     json.dump(
-        (dict(precision_score=prec, recall_score = rec),
-         dict(accuracy_score=acc, average_accuracy=ave)), outfile
+        dict(zip(['Precision', 'Recall', 'Accuracy', 'Average Accuracy'],
+        [prec, rec, acc, ave])), outfile
     )
 conf.to_csv(
     str(Params.metrics / 'confusion_matrix.csv')
