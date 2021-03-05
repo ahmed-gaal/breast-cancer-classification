@@ -34,12 +34,12 @@ stages:
       size: 126043
       nfiles: 4
     - path: src/train_model.py
-      md5: 09b38823d5224791e90640fa76b5e2d1
-      size: 791
+      md5: 34db97be57bc041d5a9e57a8a0cc77dc
+      size: 869
     outs:
     - path: brst_assets/brst_models
-      md5: 15309fcf3bf43fb6fd864b5a8c6270d4.dir
-      size: 268250
+      md5: fd5e0a56962bfc79b2740d82f23b9946.dir
+      size: 1569661
       nfiles: 1
   model evaluation:
     cmd: python src/evaluate_model.py
@@ -49,13 +49,13 @@ stages:
       size: 126043
       nfiles: 4
     - path: brst_assets/brst_models
-      md5: 15309fcf3bf43fb6fd864b5a8c6270d4.dir
-      size: 268250
+      md5: fd5e0a56962bfc79b2740d82f23b9946.dir
+      size: 1569661
       nfiles: 1
     - path: src/evaluate_model.py
       md5: ea6edd183709b3e8de82e1d2137d1cdf
       size: 1687
     outs:
     - path: brst_assets/brst_metrics/metrics.json
-      md5: 3d9328289cad49c52c7c4f4ddc8401d7
-      size: 122
+      md5: 10e3e3f617422c2e512476affb3815e3
+      size: 135
