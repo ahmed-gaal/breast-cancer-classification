@@ -1,1 +1,1 @@
-[{"precision_score": 0.9402985074626866, "recall_score": 0.9402985074626866}, {"accuracy_score": 0.9298245614035088, "average_accuracy": 0.9227272727272726}]
+{"Precision": 0.875, "Recall": 0.9402985074626866, "Accuracy": 0.8859649122807017, "Average Accuracy": 0.9303030303030303}
