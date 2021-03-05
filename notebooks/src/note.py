@@ -4,15 +4,10 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sb
-from sklearn.model_selection import train_test_split
-from sklearn.ensemble import BaggingClassifier, AdaBoostClassifier
-from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.preprocessing import LabelEncoder, LabelBinarizer
+from sklearn.preprocessing import LabelBinarizer
 from sklearn.metrics import accuracy_score, confusion_matrix, precision_score
-from sklearn.metrics import recall_score, precision_recall_curve
-from sklearn.metrics import classification_report, roc_auc_score, roc_curve
-from sklearn.model_selection import cross_val_predict, cross_val_score
+from sklearn.metrics import classification_report, roc_auc_score
+from sklearn.model_selection import cross_val_score
 
 
 class Experiment():
@@ -55,7 +50,7 @@ class Experiment():
     def corr_heatmap(df, mask: bool):
         """Method to visualize correlation."""
         plt.figure(figsize=(24, 8))
-        if mask == True:
+        if mask is True:
             # Create mask
             mask = np.zeros_like(df.corr(), dtype=np.bool)
             mask[np.triu_indices_from(mask)] = True
@@ -128,13 +123,13 @@ class Experiment():
         Method to output metrics of classifier using train or test data
         """
 
-        lb = LabelBinarizer()
-        lb.fit(y_train)
-        if train == True:
+        lab = LabelBinarizer()
+        lab.fit(y_train)
+        if train is True:
             res = est.predict(X_train)
             print("Train Score:\n")
             print('Accuracy Score:{0:.4f}\n'.format(accuracy_score(y_train, res)))
-            print("ROC AUC:{0:.4f}\n".format(roc_auc_score(y_train, lb.transform(res))))
+            print("ROC AUC:{0:.4f}\n".format(roc_auc_score(y_train, lab.transform(res))))
             print("Classification Report: \n {} \n".format(
                 classification_report(y_train, res)
             ))
@@ -149,11 +144,10 @@ class Experiment():
             res_test = est.predict(X_test)
             print("Test Score:\n")
             print('Accuracy Score:{0:.4f}\n'.format(accuracy_score(y_test, res_test)))
-            print("ROC AUC:{0:.4f}\n".format(roc_auc_score(y_test, lb.transform(res_test))))
+            print("ROC AUC:{0:.4f}\n".format(roc_auc_score(y_test, lab.transform(res_test))))
             print("Classification Report: \n {} \n".format(
                 classification_report(y_test, res_test)
             ))
             print("Confusion Matrix: \n {} \n".format(confusion_matrix(y_test, res_test)))
             return
 
-        
