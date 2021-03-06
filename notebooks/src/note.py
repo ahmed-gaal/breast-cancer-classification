@@ -38,7 +38,7 @@ class Experiment():
         pps_mtrx = pps.matrix(df)
         pps_mtrx1 = pps_mtrx[['x', 'y', 'ppscore']].pivot(columns='x', index='y',
                                                   values='ppscore')
-        plt.figure(figsize = (15, 8))
+        plt.figure(figsize = (24, 8))
         ax = sb.heatmap(pps_mtrx1, vmin=0, vmax=1, cmap="afmhot_r", linewidths=0.5,
                         annot=True)
         ax.set_title("PPS matrix")
