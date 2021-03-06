@@ -45,17 +45,17 @@ stages:
     cmd: python src/evaluate_model.py
     deps:
     - path: brst_assets/brst_features
-      md5: ce9bf4cb03beeec4305f19a517b97e4c.dir
-      size: 126043
-      nfiles: 4
+      md5: 70dd2e29d2639cb2eba2e2db6d8c71db.dir
+      size: 126283
+      nfiles: 5
     - path: brst_assets/brst_models
       md5: fd5e0a56962bfc79b2740d82f23b9946.dir
       size: 1569661
       nfiles: 1
     - path: src/evaluate_model.py
-      md5: ea6edd183709b3e8de82e1d2137d1cdf
-      size: 1687
+      md5: 5cf7c3f6203c36e5ee3e258d0cefccd9
+      size: 1844
     outs:
     - path: brst_assets/brst_metrics/metrics.json
-      md5: 10e3e3f617422c2e512476affb3815e3
-      size: 135
+      md5: 0a428d25ae730508d0f98feb6c59b56e
+      size: 82

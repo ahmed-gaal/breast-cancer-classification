@@ -48,8 +48,13 @@ ave = np.mean(res)
 with open(str(Params.metrics / 'metrics.json'), 'w') as outfile:
     json.dump(
         dict(zip(['Precision', 'Recall', 'Accuracy', 'Average Accuracy'],
-        [prec, rec, acc, ave])), outfile
+        [round(prec, 3), round(rec, 3), round(acc, 3), round(ave, 3)])), outfile
     )
 conf.to_csv(
     str(Params.metrics / 'confusion_matrix.csv')
+)
+pd.DataFrame(
+    pred, columns=['Predictions']
+).to_csv(
+    str(Params.features / 'predictions.csv'), index=None
 )
