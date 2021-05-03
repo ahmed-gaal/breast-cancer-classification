@@ -18,7 +18,7 @@ serialized format.
 #### The metrics used are:
 * Confusion Matrix
 * Accuracy Score
-* Mean Accuracy Score
+* Mean Accuracy Score using 10 fold cross validation
 * Precision Score
 * Recall Score
 -------
