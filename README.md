@@ -8,12 +8,15 @@ The data used in this workflow has been obtained from Kaggle.
 The objective of this ML Workflow is to accurately classifiy the
 diagnosis of patients to whether the cancer is **malignant** or **benign**.
 
-### This is a Machine Learning Pipeline that consists of
+### This steps of this workflow consists of
 
-*   Extracting the data from a remote storage. 
-*   Feature extraction, preprocessing and transformation occurs.
+*   Extracting the data from a remote storage.
+
+*   Feature extraction, preprocessing and transformation.
+
 *   A machine learning algorithm is applied to the transformed data and saved in a
 serialized format.
+
 *   Finally the last step of our pipeline is model evaluation. 
 
 --------
