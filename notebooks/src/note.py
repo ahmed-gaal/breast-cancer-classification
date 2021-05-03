@@ -1,4 +1,4 @@
-"""This module stores all methods used in the notebook."""
+"""The following module stores all methods used in the notebook."""
 import ppscore as pps
 import pandas as pd
 import numpy as np
@@ -11,12 +11,13 @@ from sklearn.model_selection import cross_val_score
 
 
 class Experiment():
+
     """Base class to store the methods."""
 
 
     def __init__(self):
         """Initialize the class object."""
-    
+
 
     def memory_stats(df):
         """Method to compute memory stats for each feature."""
@@ -27,6 +28,7 @@ class Experiment():
 
 
     def pps_heatmap(df):
+        
         """
             Function for calculating the Predictive Power Score and plotting a heatmap
                 Args:
@@ -67,13 +69,13 @@ class Experiment():
         """Method to calculate average accuracy of the model."""
         res = cross_val_score(est, X, y, cv=cv, n_jobs=-1, verbose=1,
                                 scoring='accuracy')
-        score = print('Average Accuracy:', (np.mean(res)))
-        std = print('Average Standard Deviation:', (np.std(res)))
+        print('Average Accuracy:', (np.mean(res)))
+        print('Average Standard Deviation:', (np.std(res)))
         return
     
 
     def plot_prc_figure(precision, recall, thresh):
-        """Method for plotting Precision Recall Curve"""
+        """Method for plotting Precision Recall Curve."""
         plt.figure(figsize=(24, 10))
         plt.plot(thresh, precision[:-1], 'r--', label='Precision')
         plt.plot(thresh, recall[:-1], 'g--', label='Recall')
