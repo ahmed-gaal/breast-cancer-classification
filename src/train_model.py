@@ -1,4 +1,4 @@
-"""This script performs model training on the preprocessed data."""
+"""The following script performs model training on the preprocessed data."""
 import pickle
 import pandas as pd
 from sklearn.ensemble import AdaBoostClassifier, RandomForestClassifier
