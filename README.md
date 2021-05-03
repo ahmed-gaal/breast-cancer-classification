@@ -35,7 +35,9 @@ serialized format.
 >   ```git clone https://github.com/ahmed-gaal/breast-cancer-classification.git```
 *   Then you need to create a virtual environment using:
 >   ```python3 -m venv env```
-*   After creating a virtual environment, install the project dependencies using:
+*   Activate your virtual environment using:
+>   ```source env/bin/activate```
+*   After activating your virtual environment, install the project dependencies using:
 >   ```pip install -r requirements.txt```
 *   Add the original data to your environment variables:
 >   ```export DATA='https://drive.google.com/uc?id=1s5vLuJ0zRq6Gjk7fkGQUI24AkR3Gjb_I'```
