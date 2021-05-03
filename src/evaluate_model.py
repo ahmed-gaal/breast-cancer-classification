@@ -1,4 +1,4 @@
-"""This scirpt evaluates the accuracy of the model developed."""
+"""The follwoing scirpt evaluates the accuracy of the model developed."""
 import json
 import pickle
 import pandas as pd
