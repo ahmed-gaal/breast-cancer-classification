@@ -1,4 +1,4 @@
-"""This script extracts data from remote storage."""
+"""The following script extracts data from remote storage."""
 import os
 import gdown
 import numpy as np
