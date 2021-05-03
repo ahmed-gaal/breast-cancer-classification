@@ -1,5 +1,7 @@
 # Breast-Cancer-Classification
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ccaab7a320c64ed9b4eea50e7b9c0bc1)](https://app.codacy.com/gh/ahmed-gaal/breast-cancer-classification?utm_source=github.com&utm_medium=referral&utm_content=ahmed-gaal/breast-cancer-classification&utm_campaign=Badge_Grade_Settings)
+
 ## Introduction
 This is a Machine Learning workflow built using Data Version Control.
 
