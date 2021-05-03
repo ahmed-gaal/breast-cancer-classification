@@ -4,8 +4,8 @@ stages:
     cmd: python src/extract_data.py
     deps:
     - path: src/extract_data.py
-      md5: aeef7b729139c5687d7d0f9f0af8dc3a
-      size: 936
+      md5: 3496a9a1aa24ab94a33c96c48135ffad
+      size: 945
     outs:
     - path: brst_assets/brst_data
       md5: 9abb1161fda5eed47adbc37960a818a2.dir
@@ -19,43 +19,43 @@ stages:
       size: 126043
       nfiles: 2
     - path: src/extract_features.py
-      md5: fe9a33695bcf442bb04df19653ef4cb5
-      size: 1371
+      md5: da3f6a39dc02d5cf4b181ad5b4f5df65
+      size: 1491
     outs:
     - path: brst_assets/brst_features
-      md5: ce9bf4cb03beeec4305f19a517b97e4c.dir
-      size: 126043
+      md5: 94557e600ef1a807ab6ef73466f3fe7f.dir
+      size: 25782
       nfiles: 4
   model training:
     cmd: python src/train_model.py
     deps:
     - path: brst_assets/brst_features
-      md5: ce9bf4cb03beeec4305f19a517b97e4c.dir
-      size: 126043
+      md5: 94557e600ef1a807ab6ef73466f3fe7f.dir
+      size: 25782
       nfiles: 4
     - path: src/train_model.py
-      md5: 20faf2eeac3bd021786c110f13f3d0be
-      size: 868
+      md5: c55efbfb4dd2c9b8e1223cd88db7a49e
+      size: 877
     outs:
     - path: brst_assets/brst_models
-      md5: 5cc203268fc42f3bfcf1dc01fe43af5d.dir
+      md5: 94e394d5e1d7a1a1771e0729c4b8e815.dir
       size: 535286
       nfiles: 1
   model evaluation:
     cmd: python src/evaluate_model.py
     deps:
     - path: brst_assets/brst_features
-      md5: 77596733835dbe40298c93e37581939d.dir
-      size: 126283
+      md5: 5c99a610fb88c93c4bead98c3f950c61.dir
+      size: 26022
       nfiles: 5
     - path: brst_assets/brst_models
-      md5: 5cc203268fc42f3bfcf1dc01fe43af5d.dir
+      md5: 94e394d5e1d7a1a1771e0729c4b8e815.dir
       size: 535286
       nfiles: 1
     - path: src/evaluate_model.py
-      md5: 5cf7c3f6203c36e5ee3e258d0cefccd9
-      size: 1844
+      md5: 2d6168c8364df8abbf41fbb90c2c9b0b
+      size: 1853
     outs:
     - path: brst_assets/brst_metrics/metrics.json
-      md5: 8e26c294c15c490d8c268c9b4d94e43f
-      size: 82
+      md5: d4903a015ebe13c79cf017e8c48f582e
+      size: 83

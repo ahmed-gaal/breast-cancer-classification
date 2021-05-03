@@ -14,7 +14,9 @@ test_df = pd.read_csv(str(Params.data / 'test.csv'))
 
 def feature_extraction(dframe):
     """Function to extract features."""
-    deff = dframe.loc[:, dframe.columns != 'diagnosis']
+    cols = ['concavity_worst', 'compactness_worst', 'compactness_mean',
+            'compactness_se', 'perimeter_se', 'concavity_mean']
+    deff = dframe.loc[:, cols]
     return deff
 
 
