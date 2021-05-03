@@ -1,4 +1,4 @@
-"""This script extracts features from the dataset."""
+"""The following script extracts features from the dataset."""
 import pandas as pd
 from param import Params
 
